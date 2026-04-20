@@ -2,7 +2,7 @@ package lesson_9_arrays;
 
 public class Main {
 
-    void main() {
+    public static void main(String[] args) {
 
         // Створити масив цілих чисел і ініціалізувати його будь-якими значеннями
         int [] array = {10, 20, 30, 40};
@@ -29,6 +29,10 @@ public class Main {
         array[0] = array[1];
         array[1] = temp;
 
+        System.out.println("array");
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("arr[" + i + "] = " + array[i]);
+        }
 
 
     }
