@@ -1,5 +1,7 @@
 package lesson_9_arrays;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -18,10 +20,9 @@ public class Main {
 
 
         // або
-        System.out.println("array");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("arr[" + i + "] = " + array[i]);
-        }
+        //System.out.println("array");
+        //for (int i = 0; i < array.length; i++) {
+           // System.out.println("arr[" + i + "] = " + array[i]);}
 
         // Змінити місцями перший і другий елементи масиву
 
@@ -29,10 +30,14 @@ public class Main {
         array[0] = array[1];
         array[1] = temp;
 
-        System.out.println("array");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("arr[" + i + "] = " + array[i]);
-        }
+        System.out.println(array[0]);
+        System.out.println(array[1]);
+        System.out.println(array[2]);
+        System.out.println(array[3]);
+
+       // System.out.println("array");
+        //for (int i = 0; i < array.length; i++) {
+          //  System.out.println("arr[" + i + "] = " + array[i]);}
 
 
     }
