@@ -68,6 +68,8 @@ package lesson_13_scanner_homework;
                }
 
            } while (menu != 4);
+
+           scanner.close();
        }
 
    }
@@ -146,6 +148,7 @@ package lesson_13_scanner_homework;
                    }
 
                } while (menu != 4);
+             scanner.close();
        }
    } */
 
