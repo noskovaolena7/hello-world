@@ -4,7 +4,7 @@ package lesson_13_scanner_homework;
 
    public class Main {
 
-       void main() {
+       static void main() {
            Scanner scanner = new Scanner(System.in);
 
            // Зчитати з клавіатури розмір масиву n. (n x m - для сміливих)
@@ -128,7 +128,7 @@ package lesson_13_scanner_homework;
                                    sum = sum + b;
                                }
                            }
-                           System.out.println("Середнє арифметичне значення: " + sum / array.length);
+                           System.out.println("Середнє арифметичне значення: " + sum / count);
                        }
 
                        case 3 -> {
