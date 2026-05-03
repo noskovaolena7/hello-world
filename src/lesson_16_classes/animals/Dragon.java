@@ -8,7 +8,7 @@ public class Dragon {
     private String color;
 
 
-    public Dragon () {
+    public Dragon() {
         System.out.println("Створено невідомго дракона");
     }
 
