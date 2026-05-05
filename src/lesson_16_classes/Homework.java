@@ -41,7 +41,7 @@ public class Homework {
         int age = scanner.nextInt();
 
         System.out.print("Введіть вагу: ");
-        double weight = scanner.nextInt();
+        double weight = scanner.nextDouble();
         scanner.nextLine();
 
         System.out.print("Введіть колір: ");
