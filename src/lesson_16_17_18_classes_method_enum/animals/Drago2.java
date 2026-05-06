@@ -1,4 +1,4 @@
-package lesson_16_classes.animals;
+package lesson_16_17_18_classes_method_enum.animals;
 
 public class Drago2 {
 
@@ -6,16 +6,18 @@ public class Drago2 {
         private int age;
         private double weight;
         private String color;
+        private Drago2Breed breed;
 
 
 
-        public Drago2(String name, int age, double weight, String color) {
+        public Drago2(String name, int age, double weight, String color, Drago2Breed breed) {
             System.out.println("Створено повноцінного дракона");
 
             this.name = name;
             this.age = age;
             this.weight = weight;
             this.color = color;
+            this.breed = breed;
 
         }
 
@@ -49,20 +51,31 @@ public class Drago2 {
         public void setColor(String color) {
             this.color = color;}
 
-        public void speak() {
+        public Drago2Breed getBreed() {
+            return breed;
+        }
+
+        public void setBreed(Drago2Breed breed) {
+            this.breed = breed;
+        }
+
+    public void speak() {
             System.out.println(name + ": Привiт! Я дракон і я можу говорити!");
         }
 
         public void fire() {
             System.out.println(name + " випускає вогонь!");
+
+
+
         }
     @Override
     public String toString() {
         return "Drago2 {" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "name=" + name + '\'' + ", age=" + age +
                 ", weight=" + weight +
-                ", color='" + color + '\'' +
+                ", color='" + color +
+                ", breed=" + breed +
                 '}';
     }
 }
