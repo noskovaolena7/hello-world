@@ -1,10 +1,11 @@
-package lesson_16_classes;
+package lesson_16_17_18_classes_method_enum;
 
-import lesson_16_classes.animals.Drago2;
+import lesson_16_17_18_classes_method_enum.animals.Drago2;
+import lesson_16_17_18_classes_method_enum.animals.Drago2Breed;
 
 import java.util.Scanner;
 
-public class Homework17 {
+public class Homework1718 {
 
     public static void main(String[] args)  {
 
@@ -25,7 +26,19 @@ public class Homework17 {
         System.out.print("Введіть колір: ");
         String color = scanner.nextLine();
 
-        Drago2 dragon = new Drago2(name, age, weight, color);
+        System.out.println("Оберіть породу дракона:");
+        for (Drago2Breed b : Drago2Breed.values()) {
+            System.out.println("- " + b);
+        }
+
+        System.out.print("Введіть породу: ");
+        String breedInput = scanner.nextLine().toUpperCase();
+
+        Drago2Breed breed = Drago2Breed.valueOf(breedInput);
+
+        Drago2 dragon = new Drago2(name, age, weight, color, breed);
+
+        String breedString= breed.name();
 
         System.out.println("Створено дракона:");
         System.out.println(dragon);
