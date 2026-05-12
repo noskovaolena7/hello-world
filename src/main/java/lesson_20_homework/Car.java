@@ -54,7 +54,7 @@ public class Car {
         }
         /*  LocalDate today = LocalDate.now();
         return !today.isAfter(nextInspectionDate);
-    }
+
 
     @Override
     public String toString() {
