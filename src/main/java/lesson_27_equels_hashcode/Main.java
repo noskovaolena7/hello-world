@@ -12,7 +12,7 @@ public class Main {
         wind.setWeight(10.5);
 
 
-        System.out.println("Котика дракончика: " + wind.getName());
+        System.out.println("Дракончика звати: " + wind.getName());
         System.out.println("Вік дракончика: " + wind.getAge());
         System.out.println("Вага дракончика: " + wind.getWeight());
 
