@@ -12,16 +12,16 @@ public class Main {
         wind.setWeight(10.5);
 
 
-        System.out.println("Котика звати: " + wind.getName());
-        System.out.println("Вік кота: " + wind.getAge());
-        System.out.println("Вага кота: " + wind.getWeight());
+        System.out.println("Котика дракончика: " + wind.getName());
+        System.out.println("Вік дракончика: " + wind.getAge());
+        System.out.println("Вага дракончика: " + wind.getWeight());
 
         Drago fire = new Drago("Вогонь", 12, 5.5);
         Drago fire2 = new Drago("Вогонь", 12, 5.5);
 
-        System.out.println("Котика звати: " +  fire.getName());
-        System.out.println("Вік кота: " +  fire.getAge());
-        System.out.println("Вага кота: " +  fire.getWeight());
+        System.out.println("Дракончика звати: " +  fire.getName());
+        System.out.println("Вік дракончика: " +  fire.getAge());
+        System.out.println("Вага дракончика: " +  fire.getWeight());
 
 
 
