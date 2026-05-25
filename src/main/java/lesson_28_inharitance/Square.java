@@ -8,8 +8,9 @@ class Square extends Rectangle {
 
     @Override
     public void displayInfo() {
-        System.out.println("Тип фiгури: Квадрат");
-        System.out.println("Сторона: " + getWidth());
-        System.out.println("Площа: " + calculateArea());
+        System.out.println("Квадрат");
+        System.out.println("Сторона квадрата: " + getWidth());
+        System.out.println("Площа квадрата: " + calculateArea());
+        System.out.println("Периметр квадрата: " + super.calculatePerimeter() / 4);
     }
 }

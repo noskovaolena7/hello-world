@@ -1,12 +1,12 @@
 package lesson_28_inharitance;
 
-import static java.lang.Math.PI;
 
 class Circle extends Shape {
 
-    private double radius;
+    private final double radius;
 
     public Circle(double radius) {
+
         this.radius = radius;
     }
 
@@ -16,8 +16,14 @@ class Circle extends Shape {
     }
 
     @Override
+    public double calculatePerimeter() {
+        return 2 * 3.14 * radius;
+    }
+
+    @Override
     public void displayInfo() {
         System.out.println("Коло з радiусом:" + radius);
-        System.out.println("Площа: " + calculateArea());
+        System.out.println("Площа кола: " + calculateArea());
+        System.out.println("Периметр кола: " + calculatePerimeter());
     }
 }
