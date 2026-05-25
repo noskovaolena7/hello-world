@@ -3,6 +3,9 @@ package lesson_16_classes.animals;
 import lesson_16_classes.food.Fish;
 import lesson_16_classes.sound.Quack;
 
+
+import java.util.Objects;
+
 public class Cat {
 
     // Додаємо поля
@@ -93,8 +96,41 @@ public class Cat {
 
     // static method
     public static void defaultVoice() {
+
         System.out.println("Статичний мяяууу");
+
     }
+
+        @Override
+        public boolean equals (Object obj){
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (!(obj instanceof Cat)) {
+                return false;
+            }
+
+
+            Cat otherCat = (Cat) obj;
+
+            return this.name.equals(otherCat.name)
+                    && this.age == otherCat.age
+                    && this.weight == otherCat.weight
+                    && this.breed.equals(otherCat.breed);
+        }
+
+        @Override
+        public int hashCode () {
+            int age = this.age;
+            int weight = (int) this.weight;
+            int name = Objects.hash(this.name);
+            int breed = Objects.hash(this.breed);
+
+            return 31 * (age + weight + name + breed);
+        }
 }
 
 
