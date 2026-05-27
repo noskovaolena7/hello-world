@@ -1,4 +1,4 @@
-package lesson_30_interface;
+package lesson_30_interface.classwork;
 
 public class Viber implements Ad, Messenger {
 
