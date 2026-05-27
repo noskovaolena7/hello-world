@@ -1,6 +1,6 @@
 package lesson_30_interface;
 
-public class Main {
+public class Main_classwork {
 
     static void main() {
 
