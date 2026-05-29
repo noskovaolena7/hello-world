@@ -19,5 +19,23 @@ public class Main {
             System.out.print(" ");
         }
         System.out.println();
+
+        Stack stack = new Stack(2);
+
+        try {
+            stack.addElementToStack(10);
+            stack.addElementToStack(20);
+            stack.addElementToStack(30);
+        } catch (StackFullException e) {
+            System.out.println("ПЕРЕВІРКА 1: " + e.getMessage());
+        }
+
+        try {
+            stack.deleteElementFromStack();
+            stack.deleteElementFromStack();
+            stack.deleteElementFromStack();
+        } catch (StackEmptyException e) {
+            System.out.println("ПЕРЕВІРКА 2: " + e.getMessage());
+        }
     }
 }
