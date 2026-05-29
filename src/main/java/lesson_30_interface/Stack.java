@@ -15,20 +15,18 @@ public class Stack implements Stackable{
     @Override
     public void addElementToStack(int element) {
         if (isFull()) {
-            System.out.println("Стек повний");
-        } else {
-            stackArray[++top] = element;
+            throw new StackFullException("Стек повний! Неможливо додати елемент: " + element);
         }
+            stackArray[++top] = element;
     }
     @Override
     public int deleteElementFromStack() {
         if (isEmpty()) {
-            System.out.println("Стек порожній");
-            return -1;
-        } else {
-            return stackArray[top--];
+            throw new StackEmptyException("Стек порожній! Немає що видаляти.");
         }
+            return stackArray[top--];
     }
+
     @Override
     public int readTop() {
         return stackArray[top];
