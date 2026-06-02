@@ -1,5 +1,7 @@
 package lesson_30_interface;
 
+import java.util.Optional;
+
 public class Stack implements Stackable{
 
     private int maxSize;
@@ -38,5 +40,13 @@ public class Stack implements Stackable{
     @Override
     public boolean isFull() {
         return (top == maxSize - 1);
+    }
+
+    public Optional<Integer> safeDeleteElement() {
+        if (isEmpty()) {
+            return Optional.empty();
+        } else {
+            return Optional.of(stackArray[top--]);
+        }
     }
 }
