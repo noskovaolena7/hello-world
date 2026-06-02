@@ -1,5 +1,7 @@
 package lesson_30_interface;
 
+import java.util.Optional;
+
 public class Stack implements Stackable{
 
     private int maxSize;
@@ -39,4 +41,5 @@ public class Stack implements Stackable{
     public boolean isFull() {
         return (top == maxSize - 1);
     }
+
 }
