@@ -33,4 +33,28 @@ class StackTest {
             System.out.println("Виняток кинутий правильно: " + e.getMessage());
         }
     }
+
+    @Test
+    void shouldReturnEmptyOptionalWhenStackIsEmpty() {
+        Stack stack = new Stack(2);
+
+        Optional<Integer> result = stack.safeDeleteElement();
+        if (result.isPresent()) {
+            fail("Помилка: стек порожній, але Optional містить значення");
+        }
+        System.out.println("Тест пройдено: Optional порожній, як і очікувалось");
+    }
+    @Test
+    void shouldReturnOptionalWithValueWhenStackHasElements() {
+        Stack stack = new Stack(2);
+        stack.addElementToStack(50);
+        Optional<Integer> result = stack.safeDeleteElement();
+        if (result.isEmpty()) {
+            fail("Помилка: стек мав елемент, але Optional порожній");
+        }
+        if (result.get() != 50) {
+            fail("Помилка: значення не збігається");
+        }
+        System.out.println("Тест пройдено: Optional містить правильне значення");
+    }
 }

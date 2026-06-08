@@ -42,4 +42,11 @@ public class Stack implements Stackable{
         return (top == maxSize - 1);
     }
 
+    public Optional<Integer> safeDeleteElement() {
+        if (isEmpty()) {
+            return Optional.empty();
+        } else {
+            return Optional.of(stackArray[top--]);
+        }
+    }
 }
