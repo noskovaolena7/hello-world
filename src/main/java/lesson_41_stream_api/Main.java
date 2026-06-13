@@ -32,7 +32,7 @@ public class Main {
                 .max(Comparator.comparingDouble(Student::getGrade));
 
         //Підрахуйте кількість студентів, які старші за 20 років.
-        double studentsOlderThan20 = studentList.stream()
+        long studentsOlderThan20 = studentList.stream()
                 .filter(student -> student.getAge() > 20)
                 .count();
 
