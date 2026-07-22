@@ -167,6 +167,10 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Project"
 
     post:
       summary: Create new project
@@ -191,6 +195,16 @@ paths:
         responses:
           200:
             description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Project"
+              404:
+                description: Not Found
+                content:
+                  application/json:
+                    schema:
+                      $ref: "#/components/schemas/Error"
 
       put:
         summary: Update project
@@ -206,6 +220,22 @@ paths:
         responses:
           200:
             description: Updated
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Project"
+          400:
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+          404:
+            description: Not Found
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Error"
 
       delete:
         summary: Delete project
@@ -215,7 +245,7 @@ paths:
           - $ref: "#/components/parameters/projectId"
         responses:
           204:
-            description: Deleted
+            description: Deleted successfully
 
     # TASKS
   /tasks:
@@ -226,6 +256,10 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
 
     post:
       summary: Create new task
@@ -239,6 +273,10 @@ paths:
       responses:
         201:
           description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
 
   /tasks/{taskId}:
       get:
@@ -250,7 +288,16 @@ paths:
         responses:
           200:
             description: OK
-
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Task"
+          404:
+            description: Not Found
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Error"
       put:
         summary: Update task
         tags:
@@ -265,6 +312,22 @@ paths:
         responses:
           200:
             description: Updated
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Task"
+          400:
+            description: Bad Request
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Error"
+          404:
+            description: Not Found
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Error"
 
       delete:
         summary: Delete task
@@ -286,6 +349,10 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimeEntryCreateRequest"
 
     post:
       summary: Create time entry
@@ -301,6 +368,10 @@ paths:
       responses:
         201:
           description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimeEntryCreateRequest"
 
     # COMMENTS
   /tasks/{taskId}/comments:
@@ -313,6 +384,10 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CommentCreateRequest"
 
     post:
       summary: Add comment
@@ -328,6 +403,10 @@ paths:
       responses:
         201:
           description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CommentCreateRequest"
 
 
     # TASK HISTORY
@@ -341,6 +420,16 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TaskHistory"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 
     # NOTIFICATIONS
   /users/{userId}/notifications:
@@ -353,6 +442,16 @@ paths:
       responses:
         200:
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notification"
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
 
   /notifications/{notificationId}/read:
     put:
@@ -364,6 +463,10 @@ paths:
       responses:
         200:
           description: Updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notification"
 
     # ATTACHMENTS
   /tasks/{taskId}/attachments:
@@ -391,6 +494,10 @@ paths:
       responses:
         201:
           description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AttachmentCreateRequest"
 
 
 components:
@@ -437,10 +544,14 @@ components:
         email:
           type: string
           format: email
+          required: true
+          example: "codillas@gmail.com"
         password:
           type: string
           format: password
           writeOnly: true
+          required: true
+          example: 'Best_secure_password'
 
     SignUpRequest:
         type: object
@@ -448,18 +559,33 @@ components:
         properties:
           first_name:
             type: string
+            required: true
+            example: Vasya
           last_name:
             type: string
+            required: true
+            example: Pupkin
           email:
             type: string
             format: email
+            required: true
+            example: "codillas@gmail.com"
           password:
             type: string
             format: password
+            writeOnly: true
+            required: true
+            example: 'Best_secure_password'
           phone_number:
             type: string
+            required: true
+            example: +417612312312
           role:
             type: string
+            enum: [ ADMIN, MANAGER, USER ]
+            description: >
+              Роль користувача у системі. Використовується для контролю доступу
+              ADMIN має повний доступ, MANAGER керує проектами та задачами, USER виконує задачі.
 
     TokenResponse:
         type: object
@@ -467,12 +593,16 @@ components:
         properties:
           token:
             type: string
-          tokenType:
-            type: string
-            example: Bearer
-          expiresIn:
-            type: integer
-            example: 3600
+            format: text
+            description: JWT
+            example: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiJ9.abc123
+            tokenType:
+              type: string
+              example: Bearer
+            expiresIn:
+              type: integer
+              description: Час життя токена в секундах
+              example: 3600
 
       # USERS
     User:
@@ -483,14 +613,31 @@ components:
             format: uuid
           first_name:
             type: string
+            required: true
+            example: Vasya
           last_name:
             type: string
+            required: true
+            example: Pupkin
           email:
             type: string
+            format: email
+            required: true
+            example: "codillas@gmail.com"
+          password:
+            type: string
+            format: password
+            writeOnly: true
+            required: true
+            example: 'Best_secure_password'
           phone_number:
             type: string
+            required: true
+            example: +417612312312
           role:
             type: string
+            enum: [ ADMIN, MANAGER, USER ]
+
 
     UserCreateRequest:
         type: object
@@ -498,16 +645,30 @@ components:
         properties:
           first_name:
             type: string
+            required: true
+            example: Vasya
           last_name:
             type: string
+            required: true
+            example: Pupkin
           email:
             type: string
+            format: email
+            required: true
+            example: "codillas@gmail.com"
           password:
             type: string
+            format: password
+            writeOnly: true
+            required: true
+            example: 'Best_secure_password'
           phone_number:
             type: string
+            required: true
+            example: +417612312312
           role:
             type: string
+            enum: [ ADMIN, MANAGER, USER ]
 
     UserUpdateRequest:
         type: object
@@ -520,6 +681,7 @@ components:
             type: string
           role:
             type: string
+            enum: [ ADMIN, MANAGER, USER ]
 
       # PROJECTS
     Project:
@@ -535,6 +697,7 @@ components:
           created_by:
             type: string
             format: uuid
+            readOnly: true
 
     ProjectCreateRequest:
         type: object
@@ -572,6 +735,7 @@ components:
             type: string
           status:
             type: string
+            enum: [ SUCCESS, CANCELED ]
           priority:
             type: string
           created_by:
@@ -650,17 +814,74 @@ components:
             format: uuid
           message:
             type: string
+    #TASK HISTORY
+    TaskHistory:
+      type: object
+      required: [ id, task_id, user_id, field_changed, changed_at ]
+      properties:
+        id:
+          type: string
+          format: uuid
+        task_id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        field_changed:
+          type: string
+        old_value:
+          type: string
+        new_value:
+          type: string
+        changed_at:
+          type: string
+          format: date-time
+
+    # NOTIFICATION
+    Notification:
+      type: object
+      required: [ id, user_id, task_id, type, message, is_read, created_at ]
+      properties:
+        id:
+          type: string
+          format: uuid
+        user_id:
+          type: string
+          format: uuid
+        task_id:
+          type: string
+          format: uuid
+        type:
+          type: string
+        message:
+          type: string
+        is_read:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
 
       # ATTACHMENTS
     AttachmentCreateRequest:
         type: object
-        required: [ file_url, uploaded_by ]
+        required: [ id, task_id, file_url, uploaded_by, uploaded_at ]
         properties:
+          id:
+            type: string
+            format: uuid
+          task_id:
+            type: string
+            format: uuid
           file_url:
             type: string
           uploaded_by:
             type: string
             format: uuid
+          uploaded_at:
+            type: string
+            format: date-time
+
 
       # ERROR
     Error:
