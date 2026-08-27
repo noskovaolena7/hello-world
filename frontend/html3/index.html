@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<body>
+<h1>Registration</h1>
+
+<form action="http://localhost:8080" method="POST">
+
+
+    <div>
+
+    <label for="email">Email:</label>
+    <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@mail.com"
+            required>
+
+    </div>
+
+    <br>
+
+    <div>
+        <label for="password">Password:</label>
+        <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="your password"
+                required>
+
+        </div>
+
+        <br>
+
+    <div>
+        <label for="firstName">First Name:</label>
+        <input
+                id="firstName"
+                type="text"
+                name="name"
+                placeholder="your first name"
+                required>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="lastName">Last name:</label>
+        <input
+                id="lastName"
+                type="text"
+                name="last name"
+                placeholder="your last name"
+                required>
+    </div>
+
+    <br>
+
+    <div>
+        <label for="age">Age:</label>
+        <input
+                id="age"
+                type="number"
+                name="age"
+                placeholder="your age"
+                required>
+    </div>
+
+    <br>
+
+    <div>
+
+        <label for="dob">Date of Birth:</label>
+        <input
+                id="dob"
+                type="date"
+                name="dateOfBirth"
+                required>
+    </div>
+
+    <br>
+    <div>
+    <span>Gender:</span>
+
+
+    <input
+            id="male"
+            type="radio"
+            name="gender"
+            value="male">
+    <label for="male">Male</label>
+
+    <input
+            id="femaleInput"
+            type="radio"
+            name="gender"
+            value="female">
+    <label for="femaleInput">Female</label>
+
+    <input
+            id="other"
+            type="radio"
+            name="gender"
+            value="other">
+    <label for="other">Other</label>
+    </div>
+
+    <br>
+
+    <div>
+        <span>Interests</span>
+
+        <input
+                id="sport"
+                type="checkbox"
+                name="sport">
+        <label for="sport">Sports</label>
+
+
+        <input
+                id="music"
+                type="checkbox"
+                name="interests">
+        <label for="music">Music</label>
+
+
+        <input
+                id="reading"
+                type="checkbox"
+                name="interests">
+        <label for="reading">Reading</label>
+
+    </div>
+
+    <br>
+
+    <div>
+        <label for="country">Country:</label>
+        <select
+                id="country"
+                name="country">
+            <option value="Ukraine">UA</option>
+            <option value="Germany">DE</option>
+            <option value="Canada">CA</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div>
+    <label for="bio">Short Bio:</label>
+    <textarea
+            id="bio"
+            name="bio"
+            rows="5"
+            cols="40"
+            placeholder="Write something...">
+
+    </textarea>
+    </div>
+
+    <br><br>
+
+    <input type="hidden" name="userId" value="12345">
+
+    <div>
+        <button type="Submit">Submit</button>
+        <button type="Reset">Reset</button>
+
+    </div>
+
+  </form>
+
+<!-- <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault(); //
+        const formData = new FormData(this);
+        console.clear();
+        console.log("Данные формы:");
+        for (let [key, value] of formData.entries()) {
+            console.log(key + ": " + value);
+        }
+        alert("Данные выведены в консоль!");
+    });
+</script> -->
+
+</body>
+</html>
