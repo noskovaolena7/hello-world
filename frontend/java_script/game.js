@@ -26,9 +26,9 @@ while (wins < 3) {
         }
         // Check if guess is lower or higher to the target
         if (guess < target) {
-            alert("The number is lower than your guess");
-        } else if (guess > target) {
             alert("The number is higher than your guess");
+        } else if (guess > target) {
+            alert("The number is lower than your guess");
         }
     }
 
