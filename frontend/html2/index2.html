@@ -1,204 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Olena Noskova</title>
+  <title>Olena Noskova – CV</title>
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
 </head>
 
 <body>
-<img src="olena-noskova.jpg" alt="Profile Image" width="200" height="280">
-<h1>Olena Noskova</h1>
 
-<h2>Junior Backend Entwicklerin</h2>
+<header class="header">
+  <div class="header-left">
+    <img src="olena-noskova.jpg" class="round-photo">
+  </div>
 
-<audio controls>
-  <source src="hillsong_i_know_you_love.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+  <div class="header-right">
+    <h1>Olena Noskova</h1>
+    <h2>Junior Backend Entwicklerin</h2>
 
-<hr>
+    <audio controls class="audio-player">
+      <source src="hillsong_i_know_you_love.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</header>
 
-<nav>
-  <ul>
-    <li><a href="#kontakt">Kontakt</a></li>
-    <li><a href="#ausbildung">Ausbildung und Studium</a></li>
-    <li><a href="#über-mich">Über mich</a></li>
-    <li><a href="#erfahrung">Arbeitserfahrung</a></li>
-    <li><a href="#fähigkeiten">Fähigkeiten</a></li>
-    <li><a href="#projekte">Projekte</a></li>
-    <li><a href="#sprachen">Sprachen</a></li>
-  </ul>
+<nav class="navigation">
+  <nav class="navigation">
+    <ul class="nav-list">
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#ausbildung">Ausbildung</a></li>
+      <li><a href="#über-mich">Über mich</a></li>
+      <li><a href="#erfahrung">Erfahrung</a></li>
+      <li><a href="#fähigkeiten">Fähigkeiten</a></li>
+      <li><a href="#projekte">Projekte</a></li>
+      <li><a href="#sprachen">Sprachen</a></li>
+    </ul>
+  </nav>
+
 </nav>
 
-<hr>
+<main class="main">
 
-<main>
-  <section id="kontakt">
-<h2>Kontakt</h2>
-<ul>
-  <li><b>Telefonnummer:</b> +4917510871311</li>
-  <li><b>Email:</b> <a href="mailto:noskovaolena7@gmail.com">noskovaolena7@gmail.com</a></li>
-  <li><b>GitHub:</b> <a href="https://github.com/noskovaolena7">Profile</a></li>
-</ul>
+  <!-- Kontakt -->
+  <section id="kontakt" class="section">
+    <h2>Kontakt</h2>
+    <div class="flex-row">
+      <p><b>Telefonnummer:</b> +4917510871311</p>
+      <p><b>Email:</b> <a href="mailto:noskovaolena7@gmail.com">noskovaolena7@gmail.com</a></p>
+      <p><b>GitHub:</b> <a href="https://github.com/noskovaolena7" target="_blank">Profile</a></p>
+    </div>
   </section>
 
-<hr>
+  <!-- Ausbildung -->
+  <section id="ausbildung" class="section">
+    <h2>Ausbildung und Studium</h2>
 
-  <section id="ausbildung">
-<h2>Ausbildung und Studium</h2>
-<!--suppress HtmlDeprecatedAttribute -->
-<table border="1">
+    <div class="table-wrapper">
+      <table class="styled-table">
+        <thead>
+        <tr>
+          <th>Abschluss</th>
+          <th>Institution</th>
+          <th>Jahr</th>
+          <th>Note</th>
+        </tr>
+        </thead>
 
-  <tr>
-    <th>Abschluss</th>
-    <th>Institution</th>
-    <th>Jahr</th>
-    <th>Note</th>
-  </tr>
+        <tbody>
+        <tr>
+          <td>Weiterbildung als Junior Backend Entwicklerin</td>
+          <td>Codillas Academy</td>
+          <td>04/2026 – 10/2026</td>
+          <td>gut</td>
+        </tr>
 
-  <tr>
-    <td><b>Weiterbildung als Junior Backend Entwicklerin</b></td>
-    <td>Codillas Academy</td>
-    <td>04/2026 - 10/2026</td>
-    <td>gut</td>
-  </tr>
+        <tr>
+          <td>Specialist in Rechtswissenschaften</td>
+          <td>Zaporizhsky National University</td>
+          <td>2008 – 2009</td>
+          <td>gut</td>
+        </tr>
 
-  <tr>
-    <td><b>Specialist in Rechtswissenschaften</b></td>
-    <td>Zaporizhsky National University des Ministeriums für Bildung und Wissenschaft der Ukraine</td>
-    <td>2008 - 2009</td>
-    <td>gut</td>
-  </tr>
+        <tr>
+          <td>Bachelor in Rechtswissenschaften</td>
+          <td>Azov Regional Institute of Management</td>
+          <td>2004 – 2008</td>
+          <td>sehr gut</td>
+        </tr>
 
-  <tr>
-    <td><b>Bachelor in Rechtswissenschaften</b></td>
-    <td>Azov Regional Institute of Management der Zaporizhzhya National Technical
-      University</td>
-    <td>2004 - 2008</td>
-    <td>sehr gut</td>
-  </tr>
+        <tr>
+          <td>Buchhaltungskraft</td>
+          <td>Berdjansk Professional Lyceum</td>
+          <td>2007 – 2008</td>
+          <td>gut</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 
-  <tr>
-    <td><b>Diplom eines Facharbeiters als Buchhaltungskraft</b></td>
-    <td>Berdjansk Professional Lyceum</td>
-    <td>2007 - 2008</td>
-    <td>gut</td>
-  </tr>
+  <!-- Über mich -->
+  <section id="über-mich" class="section">
+    <h2>Über mich</h2>
 
-</table>
-    </section>
+    <video controls class="video">
+      <source src="many cute kittens videos.mp4" type="video/mp4">
+    </video>
 
-<hr>
-  <section id="über-mich">
-<h2>Über mich</h2>
+    <p>
+      Ich bin eine engagierte Junior Backend Entwicklerin mit einer Leidenschaft für die Entwicklung von effizienten
+      und skalierbaren Webanwendungen. Mit einem soliden Hintergrund in Rechtswissenschaften und Buchhaltung bringe ich
+      analytische Fähigkeiten und ein strukturiertes Denken in meine Arbeit ein.
+    </p>
+  </section>
 
-<video controls width="600">
-  <source src="many cute kittens videos.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-<hr>
-<p>Ich bin eine engagierte Junior Backend Entwicklerin mit einer Leidenschaft für die Entwicklung von effizienten
-  und skalierbaren Webanwendungen. Mit einem soliden Hintergrund in Rechtswissenschaften und
-  Buchhaltung bringe ich analytische Fähigkeiten und ein strukturiertes Denken in meine Arbeit ein. Ich strebe danach,
-  innovative Lösungen zu entwickeln und mich kontinuierlich weiterzubilden,
-  um den sich ständig ändernden Anforderungen der Technologiebranche gerecht zu werden.</p>
-    </section>
+  <!-- Erfahrung -->
+  <section id="erfahrung" class="section">
+    <h2>Arbeitserfahrung</h2>
 
-<hr>
+    <ul class="hover-list">
+      <li><b>Junior Software Developer</b> – Task & Time Tracker Projekt</li>
+      <li><b>Social Media Marketing Manager</b> – Content, Analyse</li>
+      <li><b>Website-Content Mitarbeiterin</b> – SEO, Produktpflege</li>
+      <li><b>Verkäuferin im Café</b></li>
+      <li><b>Notarassistentin</b></li>
+      <li><b>Anwaltsassistentin</b></li>
+      <li><b>Schmuckverkäuferin</b></li>
+      <li><b>Fitnesstrainerin</b></li>
+    </ul>
+  </section>
 
-  <section id="erfahrung">
-<h2>Arbeitserfahrung</h2>
-<ul>
-  <li>
-    <b>Junior Software Developer (Weiterbildung)</b> (aktuell)<br>
-    Entwicklung eigener Projekte, darunter ein Task- und Time-Tracking-System mit Java, Spring Boot und PostgreSQL.
-  </li>
-  <li>
-    <b>Social Media Marketing Manager</b> (ca. 2 Jahre)<br>
-    Erstellung von Content, Betreuung sozialer Netzwerke, Analyse von Engagement und Reichweite.
-  </li>
-  <li>
-    <b>Mitarbeiterin für Website-Content – Lebensmittellieferdienst</b> (ca. 2 Jahre)<br>
-    Pflege und Aktualisierung von Produktbeschreibungen, SEO-optimierte Texte, Qualitätskontrolle der Inhalte.
-  </li>
-  <li>
-    <b>Verkäuferin im Café</b> (Wochenenden, über 2 Jahre)<br>
-    Kundenservice, Kassentätigkeiten, Organisation kleiner Abläufe im Tagesgeschäft.
-  </li>
-  <li>
-    <b>Notarassistentin</b><br>
-    Vorbereitung von Dokumenten, Kommunikation mit Klienten, Unterstützung bei administrativen Prozessen.
-  </li>
-  <li>
-    <b>Anwaltsassistentin</b><br>
-    Recherche, Dokumentenverwaltung, organisatorische Unterstützung juristischer Tätigkeiten.
-  </li>
-  <li>
-    <b>Schmuckverkäuferin</b><br>
-    Beratung, Verkauf, Präsentation von Produkten.
-  </li>
-  <li>
-    <b>Fitnesstrainerin</b><br>
-    Durchführung von Trainings, Betreuung von Kunden, Erstellung individueller Trainingspläne.
-  </li>
-</ul>
-    </section>
-<hr>
-  <section id="fähigkeiten">
-<h2>Fähigkeiten</h2>
-<ul>
-  <li><b>Programmierung:</b> Java, Python, JavaScript, HTML, CSS, SQL</li>
-  <li><b>DevOps:</b> Docker</li>
-  <li><b>Datenbanken:</b> MySQL, PostgreSQL</li>
-  <li><b>Testing:</b> jUnit, Mockito</li>
-  <li><b>Frameworks:</b> Spring Boot, Hibernate</li>
-  <li><b>Tools:</b> MS Office (Word, Excel, Outlook), Git</li>
-  <li><b>Soft Skills:</b> Organisation, Kommunikation, schnelles Lernen, strukturierte Arbeitsweise</li>
-  <li><b>Sonstiges:</b> gutes PC-Schreiben, Führerschein Klasse B</li>
-</ul>
-    </section>
+  <!-- Fähigkeiten -->
+  <section id="fähigkeiten" class="section">
+    <h2>Fähigkeiten</h2>
 
-<hr>
-  <section id="projekte">
-<h2>Aktuelle Projekte</h2>
-<ul>
-  <li>
-    <b>Task & Time Tracker</b><br>
-    Java + Spring Boot + PostgreSQL + Spring Boot Security
-    Funktionen: Aufgabenverwaltung, Timer, Tages-/Wochenstatistik, Benutzeroberfläche für effizientes Zeitmanagement.
-    Das Projekt ist ein webbasiertes System zur Verwaltung von Aufgaben, Projekten und Arbeitszeit.
-    Es ermöglicht Unternehmen, den Fortschritt jedes Projekts transparent zu verfolgen und die Teamkapazität effizient
-    zu planen. Ein integrierter Timer zeichnet die tatsächliche Arbeitszeit der Mitarbeiter automatisch auf.
-    Benutzer erhalten rechtzeitige Erinnerungen vor wichtigen Deadlines, um Verzögerungen zu vermeiden.
-    Das Rollenmodell umfasst Admin, Manager und Worker, wodurch klare Verantwortlichkeiten und sichere
-    Zugriffsrechte gewährleistet werden.
-    GitHub: <a href="https://github.com/noskovaolena7/task-and-time-tracker-noskova" target="_blank">
-    https://github.com/noskovaolena7/task-and-time-tracker-noskova</a>
-  </li>
-</ul>
+    <div class="skills-grid">
+      <div class="skill-card">Java</div>
+      <div class="skill-card">Spring Boot</div>
+      <div class="skill-card">PostgreSQL</div>
+      <div class="skill-card">Docker</div>
+      <div class="skill-card">HTML/CSS/JS</div>
+      <div class="skill-card">JUnit / Mockito</div>
+      <div class="skill-card">Git</div>
+      <div class="skill-card">Organisation</div>
+    </div>
+  </section>
 
-    </section>
+  <!-- Projekte -->
+  <section id="projekte" class="section">
+    <h2>Aktuelle Projekte</h2>
 
-<hr>
+    <div class="project-card">
+      <h3>Task & Time Tracker</h3>
+      <p>Java + Spring Boot + PostgreSQL + Security</p>
+      <p>Aufgabenverwaltung, Timer, Statistiken, Rollenmodell.</p>
+      <a href="https://github.com/noskovaolena7/task-and-time-tracker-noskova" target="_blank" class="project-link">
+        GitHub ansehen
+      </a>
+    </div>
+  </section>
 
-  <section id="sprachen">
-<h2>Sprachen</h2>
-<ul>
-  <li>English (A2)</li>
-  <li>Deutsch (C1)</li>
-  <li>Ukrainisch (fließend)</li>
-  <li>Russisch (fließend)</li>
-  <li>Polnisch (A1)</li>
-</ul>
+  <!-- Sprachen -->
+  <section id="sprachen" class="section">
+    <h2>Sprachen</h2>
 
-    </section>
+    <ul class="hover-list">
+      <li>English (A2)</li>
+      <li>Deutsch (C1)</li>
+      <li>Ukrainisch</li>
+      <li>Russisch</li>
+      <li>Polnisch (A1)</li>
+    </ul>
+  </section>
 
 </main>
-<hr>
 
-<footer>
+<footer class="footer">
   <p>&copy; 2026 Olena Noskova. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
